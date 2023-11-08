@@ -4,6 +4,7 @@ describe('should test core', () => {
   const instance = core({
     mt: 'margin-top',
     mb: 'margin-bottom',
+    ml: 'margin-left',
   });
   it('should check basic', () => {
     expect(instance({ mt: 10, mb: '50%' })).toEqual({
