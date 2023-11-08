@@ -3,9 +3,12 @@
     "module": "commonjs",
     "target": "es5",
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "strictNullChecks": true,
   },
   "exclude": [
+//    "src/**/*.spec.*",
+//    "src/**/*.test.*",
     "node_modules"
   ]
 }

@@ -1,3 +1,3 @@
 type ICssValue = string | number
 
-export default ICssValue;
+export default ICssValue
