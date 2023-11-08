@@ -1,0 +1,28 @@
+{
+  "name": "styled-crafter",
+  "version": "0.0.0",
+  "description": "Styled-Crafter is a powerful TypeScript toolkit for effortlessly crafting and customizing your design system's styles. With a rich set of utilities, components, and predefined styles, this package streamlines the design system development process, empowering you to create beautiful and consistent user interfaces with ease.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:keshavkatwe/styled-crafter.git"
+  },
+  "keywords": [
+    "styled-components",
+    "emotion"
+  ],
+  "author": "Keshav Katwe",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.7",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}
