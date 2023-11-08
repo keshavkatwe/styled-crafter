@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": ['plugin:@typescript-eslint/recommended',"standard-with-typescript"],
+    "extends": ['plugin:@typescript-eslint/recommended',"standard-with-typescript", "prettier"],
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     "overrides": [
