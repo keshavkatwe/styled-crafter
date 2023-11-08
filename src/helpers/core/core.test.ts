@@ -17,8 +17,9 @@ describe('should test core', () => {
   });
 
   it('should check if percentage passed', () => {
-    expect(instance({ mt: '50%' })).toStrictEqual({
+    expect(instance({ mt: '50%', ml: 90 })).toStrictEqual({
       'margin-top': '50%',
+      'margin-left': '90px',
     });
   });
 });
