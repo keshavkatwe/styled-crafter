@@ -1,10 +1,16 @@
 import ICssValue from "../../types/ICssValue";
 
-const core = <T extends {}>(stylingProps: T, stylingValues: Record<keyof T, string>) => {
+const core = <T extends {}>(stylingValues: Record<keyof T, string>) => (stylingProps: {[KEY in keyof T]?:ICssValue} )=> {
     const cssValues: Record<string, ICssValue> = {}
 
     Object.keys(stylingProps).forEach(propKey => {
-        cssValues[stylingValues[propKey]] = stylingProps[propKey]
+        let propertyValue = stylingProps[propKey];
+        if (propertyValue) {
+            if (typeof propertyValue === 'number') {
+                propertyValue = propertyValue + 'px'
+            }
+            cssValues[stylingValues[propKey]] = propertyValue
+        }
     })
 
     return cssValues;
