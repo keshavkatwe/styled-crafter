@@ -23,7 +23,8 @@ describe('should test core', () => {
   });
 
   it('should check if extra params passed', () => {
-    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     expect(instance({ mt: '50%', pt: '10px' })).toStrictEqual({
       'margin-top': '50%',
     });
