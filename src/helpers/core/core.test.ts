@@ -21,4 +21,11 @@ describe('should test core', () => {
       'margin-top': '50%',
     });
   });
+
+  it('should check if extra params passed', () => {
+    // @ts-ignore
+    expect(instance({ mt: '50%', pt: '10px' })).toStrictEqual({
+      'margin-top': '50%',
+    });
+  });
 });

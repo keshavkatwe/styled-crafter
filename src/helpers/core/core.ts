@@ -7,11 +7,12 @@ const core =
 
     Object.keys(stylingProps).forEach((propKey) => {
       let propertyValue = stylingProps[propKey];
-      if (propertyValue !== undefined) {
+      const propertyKey = stylingValues[propKey];
+      if (propertyValue !== undefined && propertyKey !== undefined) {
         if (typeof propertyValue === 'number') {
           propertyValue = propertyValue + 'px';
         }
-        cssValues[stylingValues[propKey]] = propertyValue;
+        cssValues[propertyKey] = propertyValue;
       }
     });
 
