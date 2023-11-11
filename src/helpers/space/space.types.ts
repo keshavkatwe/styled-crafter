@@ -1,3 +1,7 @@
 export interface ISpaceProps {
-  margin: string;
+  $margin?: number;
+  $marginTop?: number;
+  $marginRight?: number;
+  $marginBottom?: number;
+  $marginLeft?: number;
 }
