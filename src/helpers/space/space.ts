@@ -4,11 +4,11 @@ import type ICssValue from '../../types/ICssValue';
 
 const coreSpaceInstance = core({
   // margin-properties
-  margin: 'margin',
-  marginTop: 'margin-top',
-  marginRight: 'margin-right',
-  marginBottom: 'margin-bottom',
-  marginLeft: 'margin-left',
+  $margin: 'margin',
+  $marginTop: 'margin-top',
+  $marginRight: 'margin-right',
+  $marginBottom: 'margin-bottom',
+  $marginLeft: 'margin-left',
   // marginX,
   // marginY,
   m: 'margin',
