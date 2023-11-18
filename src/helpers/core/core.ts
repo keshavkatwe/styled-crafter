@@ -1,20 +1,23 @@
 import type ICssValue from '../../types/ICssValue';
+import { type IStylingProps } from './core.types';
 
 const core =
-  <T extends Record<string, unknown>>(stylingValues: Record<keyof T, string>) =>
-  (stylingProps: { [KEY in keyof T]?: ICssValue }) => {
+  <T extends object>(stylingValues: Record<keyof T, string>) =>
+  (stylingProps: IStylingProps<T>) => {
     const cssValues: Record<string, ICssValue> = {};
 
-    Object.keys(stylingProps).forEach((propKey) => {
-      let propertyValue = stylingProps[propKey];
-      const propertyKey = stylingValues[propKey];
-      if (propertyValue !== undefined && propertyKey !== undefined) {
-        if (typeof propertyValue === 'number') {
-          propertyValue = propertyValue + 'px';
+    (Object.keys(stylingProps) as Array<keyof IStylingProps<T>>).forEach(
+      (propKey) => {
+        let propertyValue = stylingProps[propKey] as ICssValue;
+        const propertyKey = stylingValues[propKey];
+        if (propertyValue !== undefined && propertyKey !== undefined) {
+          if (typeof propertyValue === 'number') {
+            propertyValue = propertyValue + 'px';
+          }
+          cssValues[propertyKey] = propertyValue;
         }
-        cssValues[propertyKey] = propertyValue;
-      }
-    });
+      },
+    );
 
     return cssValues;
   };

@@ -1,13 +1,25 @@
 export interface ISpaceProps {
-  $margin?: number;
-  $marginTop?: number;
-  $marginRight?: number;
-  $marginBottom?: number;
-  $marginLeft?: number;
+  $margin?: string;
+  $marginTop?: string;
+  $marginRight?: string;
+  $marginBottom?: string;
+  $marginLeft?: string;
 
-  $m?: 'margin';
-  $mt?: 'margin-top';
-  $mr?: 'margin-right';
-  $mb?: 'margin-bottom';
-  $ml?: 'margin-left';
+  $m?: string;
+  $mt?: string;
+  $mr?: string;
+  $mb?: string;
+  $ml?: string;
+
+  $padding?: string;
+  $paddingTop?: string;
+  $paddingRight?: string;
+  $paddingBottom?: string;
+  $paddingLeft?: string;
+
+  $p?: string;
+  $pt?: string;
+  $pr?: string;
+  $pb?: string;
+  $pl?: string;
 }
