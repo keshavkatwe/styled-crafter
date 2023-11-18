@@ -9,7 +9,7 @@ const core =
     (Object.keys(stylingProps) as Array<keyof IStylingProps<T>>).forEach(
       (propKey) => {
         let propertyValue = stylingProps[propKey] as ICssValue;
-        const propertyKey = stylingValues[propKey];
+        const propertyKey: string | string[] = stylingValues[propKey];
         if (propertyValue !== undefined && propertyKey !== undefined) {
           if (typeof propertyValue === 'number') {
             propertyValue = propertyValue + 'px';
