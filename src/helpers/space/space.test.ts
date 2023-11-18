@@ -10,4 +10,15 @@ describe('should test space', () => {
       margin: '10px',
     });
   });
+
+  it('should check multiple property types', () => {
+    expect(
+      space({
+        $marginX: '10px',
+      }),
+    ).toStrictEqual({
+      'margin-left': '10px',
+      'margin-right': '10px',
+    });
+  });
 });

@@ -2,7 +2,7 @@ import type ICssValue from '../../types/ICssValue';
 import { type IStylingProps } from './core.types';
 
 const core =
-  <T extends object>(stylingValues: Record<keyof T, string>) =>
+  <T extends object>(stylingValues: Record<keyof T, string | string[]>) =>
   (stylingProps: IStylingProps<T>) => {
     const cssValues: Record<string, ICssValue> = {};
 
@@ -14,7 +14,14 @@ const core =
           if (typeof propertyValue === 'number') {
             propertyValue = propertyValue + 'px';
           }
-          cssValues[propertyKey] = propertyValue;
+
+          if (typeof propertyKey === 'string') {
+            cssValues[propertyKey] = propertyValue;
+          } else if (Array.isArray(propertyKey)) {
+            propertyKey.forEach((propKeyItem) => {
+              cssValues[propKeyItem] = propertyValue;
+            });
+          }
         }
       },
     );

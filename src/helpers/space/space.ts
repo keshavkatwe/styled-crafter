@@ -9,6 +9,7 @@ const coreSpaceInstance = core<ISpaceProps>({
   $marginRight: 'margin-right',
   $marginBottom: 'margin-bottom',
   $marginLeft: 'margin-left',
+  $marginX: ['margin-left', 'margin-right'],
   // marginX,
   // marginY,
   $m: 'margin',
