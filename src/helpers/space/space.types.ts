@@ -8,22 +8,27 @@ export interface ISpaceProps {
   $marginBottom?: ISpacing;
   $marginLeft?: ISpacing;
   $marginX?: ISpacing;
-
+  $marginY?: ISpacing;
   $m?: ISpacing;
   $mt?: ISpacing;
   $mr?: ISpacing;
   $mb?: ISpacing;
   $ml?: ISpacing;
+  $mx?: ISpacing;
+  $my?: ISpacing;
 
   $padding?: ISpacing;
   $paddingTop?: ISpacing;
   $paddingRight?: ISpacing;
   $paddingBottom?: ISpacing;
   $paddingLeft?: ISpacing;
-
+  $paddingX?: ISpacing;
+  $paddingY?: ISpacing;
   $p?: ISpacing;
   $pt?: ISpacing;
   $pr?: ISpacing;
   $pb?: ISpacing;
   $pl?: ISpacing;
+  $px?: ISpacing;
+  $py?: ISpacing;
 }

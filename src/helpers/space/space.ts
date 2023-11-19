@@ -10,15 +10,14 @@ const coreSpaceInstance = core<ISpaceProps>({
   $marginBottom: 'margin-bottom',
   $marginLeft: 'margin-left',
   $marginX: ['margin-left', 'margin-right'],
-  // marginX,
-  // marginY,
+  $marginY: ['margin-top', 'margin-bottom'],
   $m: 'margin',
   $mt: 'margin-top',
   $mr: 'margin-right',
   $mb: 'margin-bottom',
   $ml: 'margin-left',
-  // mx,
-  // my,
+  $mx: ['margin-left', 'margin-right'],
+  $my: ['margin-top', 'margin-bottom'],
 
   // padding-properties
   $padding: 'padding',
@@ -26,15 +25,15 @@ const coreSpaceInstance = core<ISpaceProps>({
   $paddingRight: 'padding-right',
   $paddingBottom: 'padding-bottom',
   $paddingLeft: 'padding-left',
-  // paddingX,
-  // paddingY,
+  $paddingX: ['padding-right', 'padding-left'],
+  $paddingY: ['padding-top', 'padding-bottom'],
   $p: 'padding',
   $pt: 'padding-top',
   $pr: 'padding-right',
   $pb: 'padding-bottom',
   $pl: 'padding-left',
-  // px,
-  // py,
+  $px: ['padding-right', 'padding-left'],
+  $py: ['padding-top', 'padding-bottom'],
 });
 const space = (props: ISpaceProps): Record<string, ICssValue> => {
   return coreSpaceInstance(props);
