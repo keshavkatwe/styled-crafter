@@ -1,26 +1,29 @@
+import { type DefaultCrafter } from '../../types/crafter';
+
+type ISpacing = DefaultCrafter['spacing'];
 export interface ISpaceProps {
-  $margin?: string;
-  $marginTop?: string;
-  $marginRight?: string;
-  $marginBottom?: string;
-  $marginLeft?: string;
-  $marginX?: string;
+  $margin?: ISpacing;
+  $marginTop?: ISpacing;
+  $marginRight?: ISpacing;
+  $marginBottom?: ISpacing;
+  $marginLeft?: ISpacing;
+  $marginX?: ISpacing;
 
-  $m?: string;
-  $mt?: string;
-  $mr?: string;
-  $mb?: string;
-  $ml?: string;
+  $m?: ISpacing;
+  $mt?: ISpacing;
+  $mr?: ISpacing;
+  $mb?: ISpacing;
+  $ml?: ISpacing;
 
-  $padding?: string;
-  $paddingTop?: string;
-  $paddingRight?: string;
-  $paddingBottom?: string;
-  $paddingLeft?: string;
+  $padding?: ISpacing;
+  $paddingTop?: ISpacing;
+  $paddingRight?: ISpacing;
+  $paddingBottom?: ISpacing;
+  $paddingLeft?: ISpacing;
 
-  $p?: string;
-  $pt?: string;
-  $pr?: string;
-  $pb?: string;
-  $pl?: string;
+  $p?: ISpacing;
+  $pt?: ISpacing;
+  $pr?: ISpacing;
+  $pb?: ISpacing;
+  $pl?: ISpacing;
 }
