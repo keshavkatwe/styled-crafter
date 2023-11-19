@@ -1,6 +1,6 @@
 {
   "name": "styled-crafter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Styled-Crafter is a powerful TypeScript toolkit for effortlessly crafting and customizing your design system's styles. With a rich set of utilities, components, and predefined styles, this package streamlines the design system development process, empowering you to create beautiful and consistent user interfaces with ease.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
