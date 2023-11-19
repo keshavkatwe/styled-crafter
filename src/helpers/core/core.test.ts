@@ -29,4 +29,30 @@ describe('should test core', () => {
       'margin-top': '50%',
     });
   });
+
+  it('should check if theme value working', () => {
+    const instanceWithTheme = core(
+      {
+        mt: 'margin-top',
+        mb: 'margin-bottom',
+        ml: 'margin-left',
+      },
+      {
+        themeAccessKey: 'spacing',
+      },
+    );
+
+    expect(
+      instanceWithTheme({
+        mt: 'sp1',
+        theme: {
+          spacing: {
+            sp1: 10,
+          },
+        },
+      }),
+    ).toStrictEqual({
+      'margin-top': '10px',
+    });
+  });
 });
