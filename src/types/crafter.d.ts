@@ -1,3 +1,5 @@
-export interface DefaultCrafter {
-  spacing: string;
+declare module 'styled-crafter' {
+  export interface DefaultCrafter {
+    spacing: string;
+  }
 }
