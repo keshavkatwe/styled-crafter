@@ -1,4 +1,4 @@
-import { type DefaultCrafter } from 'styled-crafter';
+import { type DefaultCrafter } from '../../types/crafter';
 
 type ISpacing = DefaultCrafter['spacing'];
 export interface ISpaceProps {
