@@ -9,7 +9,7 @@ const core =
   (stylingProps: IStylingProps<T>) => {
     const cssValues: Record<string, ICssValue> = {};
 
-    const themeObj = stylingProps?.theme;
+    const themeObj = stylingProps.theme;
 
     (Object.keys(stylingProps) as Array<keyof IStylingProps<T>>).forEach(
       (propKey) => {
