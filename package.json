@@ -13,7 +13,6 @@
     "build": "microbundle",
     "lint": "eslint .",
     "test": "jest",
-    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "prepare": "husky install"
   },

@@ -54,7 +54,7 @@ describe('should test core', () => {
       }),
     ).toStrictEqual({
       'margin-top': '10px',
-      // 'margin-bottom': '10px',
+      'margin-bottom': '10px',
     });
   });
 });
