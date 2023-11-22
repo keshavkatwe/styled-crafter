@@ -45,6 +45,7 @@ describe('should test core', () => {
     expect(
       instanceWithTheme({
         mt: 'sp1',
+        mb: '10px',
         theme: {
           spacing: {
             sp1: 10,
@@ -53,6 +54,7 @@ describe('should test core', () => {
       }),
     ).toStrictEqual({
       'margin-top': '10px',
+      'margin-bottom': '10px',
     });
   });
 });
