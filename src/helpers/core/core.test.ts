@@ -1,4 +1,4 @@
-import core from './core';
+import { core } from '../../index';
 
 describe('should test core', () => {
   const instance = core({
@@ -31,27 +31,27 @@ describe('should test core', () => {
   });
 
   it('should check if theme value working', () => {
-    const instanceWithTheme = core(
-      {
-        mt: 'margin-top',
-        mb: 'margin-bottom',
-        ml: 'margin-left',
-      },
-      {
-        themeAccessKey: 'spacing',
-      },
-    );
+    const instanceWithTheme = core({
+      mt: 'margin-top',
+      mb: 'margin-bottom',
+      ml: 'margin-left',
+    });
 
     expect(
-      instanceWithTheme({
-        mt: 'sp1',
-        mb: '10px',
-        theme: {
-          spacing: {
-            sp1: 10,
+      instanceWithTheme(
+        {
+          mt: 'sp1',
+          mb: '10px',
+          theme: {
+            spacing: {
+              sp1: 10,
+            },
           },
         },
-      }),
+        {
+          themeAccessKey: 'spacing',
+        },
+      ),
     ).toStrictEqual({
       'margin-top': '10px',
       'margin-bottom': '10px',

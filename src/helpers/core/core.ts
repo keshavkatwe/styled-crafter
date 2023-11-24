@@ -2,11 +2,8 @@ import type ICssValue from '../../types/ICssValue';
 import { type ICoreOptions, type IStylingProps } from './core.types';
 
 const core =
-  <T extends object>(
-    stylingValues: Record<keyof T, string | string[]>,
-    options?: ICoreOptions,
-  ) =>
-  (stylingProps: IStylingProps<T>) => {
+  <T extends object>(stylingValues: Record<keyof T, string | string[]>) =>
+  (stylingProps: IStylingProps<T>, options?: ICoreOptions) => {
     const cssValues: Record<string, ICssValue> = {};
 
     const themeObj = stylingProps.theme;
