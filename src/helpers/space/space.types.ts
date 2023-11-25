@@ -1,7 +1,8 @@
 import { type DefaultCrafter } from 'styled-crafter';
+import type ITheme from '../../types/ITheme';
 
 type ISpacing = DefaultCrafter['spacing'];
-export interface ISpaceProps {
+export interface ISpaceProps extends ITheme {
   $margin?: ISpacing;
   $marginTop?: ISpacing;
   $marginRight?: ISpacing;

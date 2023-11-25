@@ -21,4 +21,22 @@ describe('should test space', () => {
       'margin-right': '10px',
     });
   });
+
+  it('should check with theme object', () => {
+    expect(
+      space({
+        $marginX: 'sp1',
+        theme: {
+          spacing: {
+            sp1: '10px',
+            sp2: '12px',
+            sp3: '14px',
+          },
+        },
+      }),
+    ).toStrictEqual({
+      'margin-left': '10px',
+      'margin-right': '10px',
+    });
+  });
 });
