@@ -2,7 +2,7 @@ import { type ISpaceProps } from './space.types';
 import { core } from '../core';
 import type ICssValue from '../../types/ICssValue';
 
-const coreSpaceInstance = core<ISpaceProps>({
+const coreSpaceInstance = core<Omit<ISpaceProps, 'theme'>>({
   // margin-properties
   $margin: 'margin',
   $marginTop: 'margin-top',
@@ -36,6 +36,8 @@ const coreSpaceInstance = core<ISpaceProps>({
   $py: ['padding-top', 'padding-bottom'],
 });
 const space = (props: ISpaceProps): Record<string, ICssValue> => {
-  return coreSpaceInstance(props);
+  return coreSpaceInstance(props, {
+    themeAccessKey: 'spacing',
+  });
 };
 export default space;
