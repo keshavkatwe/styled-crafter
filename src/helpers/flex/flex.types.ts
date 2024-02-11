@@ -1,4 +1,5 @@
 import type { DefaultCrafter } from 'styled-crafter';
+import type ITheme from '../../types/ITheme';
 
 type ISpacing = DefaultCrafter['spacing'];
 export type IFlexDirection = 'row' | 'column';
@@ -16,7 +17,7 @@ export type IJustifyContent =
   | 'space-between'
   | 'space-around'
   | 'space-evenly';
-export interface IFlexProps {
+export interface IFlexProps extends ITheme {
   flexDir?: IFlexDirection;
   flexWrap?: IFlexWrap;
   alignItems?: IAlignItems;

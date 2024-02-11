@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from './index';
 
 describe('color helper test cases', () => {
   it('should check basic color function', () => {

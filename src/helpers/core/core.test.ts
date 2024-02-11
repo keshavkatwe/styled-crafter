@@ -7,7 +7,7 @@ describe('should test core', () => {
     ml: 'margin-left',
   });
   it('should check basic', () => {
-    expect(instance({ mt: 10, mb: '50%' })).toEqual({
+    expect(instance({ mt: '10px', mb: '50%' })).toEqual({
       'margin-top': '10px',
       'margin-bottom': '50%',
     });
@@ -44,7 +44,7 @@ describe('should test core', () => {
           mb: '10px',
           theme: {
             spacing: {
-              sp1: 10,
+              sp1: '10px',
             },
           },
         },
