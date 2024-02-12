@@ -6,12 +6,13 @@ const variant =
   ({ themeProperty, prop = '$variant' }: IVariantFunctionProps) =>
   (
     props: Record<string, unknown> & IThemeVariant,
-  ): Record<string, ICssValue> | undefined => {
+  ): Record<string, ICssValue> => {
     const themeObject = props?.theme?.[themeProperty];
     const propValue = props[prop] as string;
 
     if (themeObject != null) {
       return themeObject[propValue];
     }
+    return {};
   };
 export default variant;
