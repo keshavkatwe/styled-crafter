@@ -18,11 +18,11 @@ export type IJustifyContent =
   | 'space-around'
   | 'space-evenly';
 export interface IFlexProps extends ITheme {
-  flexDir?: IFlexDirection;
-  flexWrap?: IFlexWrap;
-  alignItems?: IAlignItems;
-  justifyContent?: IJustifyContent;
-  flex?: number;
-  flexGrow?: number;
-  gap?: ISpacing;
+  $flexDir?: IFlexDirection;
+  $flexWrap?: IFlexWrap;
+  $alignItems?: IAlignItems;
+  $justifyContent?: IJustifyContent;
+  $flex?: number;
+  $flexGrow?: number;
+  $gap?: ISpacing;
 }

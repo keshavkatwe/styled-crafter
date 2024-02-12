@@ -4,13 +4,13 @@ describe('flex helper test cases', () => {
   it('should test basic', () => {
     expect(
       flex({
-        flexDir: 'row',
-        flex: 1,
-        flexWrap: 'wrap',
-        flexGrow: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        gap: 'sp1',
+        $flexDir: 'row',
+        $flex: 1,
+        $flexWrap: 'wrap',
+        $flexGrow: 1,
+        $justifyContent: 'flex-end',
+        $alignItems: 'center',
+        $gap: 'sp1',
         theme: {
           spacing: {
             sp1: '10px',

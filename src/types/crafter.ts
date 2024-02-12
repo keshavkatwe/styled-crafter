@@ -1,7 +1,7 @@
 declare module 'styled-crafter' {
   export interface DefaultCrafter {
     spacing: string;
-    color: string;
+    colors: string;
     buttons: Record<
       'primary' | 'secondary',
       {

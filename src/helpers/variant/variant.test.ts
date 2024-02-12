@@ -6,7 +6,7 @@ describe('test cases for variant', () => {
       variant({
         themeProperty: 'buttons',
       })({
-        variant: 'primary',
+        $variant: 'primary',
         theme: {
           buttons: {
             primary: {
