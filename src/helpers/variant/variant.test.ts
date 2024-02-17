@@ -5,6 +5,7 @@ describe('test cases for variant', () => {
     expect(
       variant({
         themeProperty: 'buttons',
+        propName: '$variant',
       })({
         $variant: 'primary',
         theme: {

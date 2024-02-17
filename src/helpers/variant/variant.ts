@@ -1,18 +1,13 @@
-import { type IVariantFunctionProps } from './variant.types';
-import type IThemeVariant from '../../types/IThemeVariant';
-import type ICssValue from '../../types/ICssValue';
+import {
+  type IVariantFunctionProps,
+  type IVariantSecondFunctionProps,
+} from './variant.types';
 
 const variant =
-  ({ themeProperty, prop = '$variant' }: IVariantFunctionProps) =>
-  (
-    props: Record<string, unknown> & IThemeVariant,
-  ): Record<string, ICssValue> => {
-    const themeObject = props?.theme?.[themeProperty];
-    const propValue = props[prop] as string;
-
-    if (themeObject != null) {
-      return themeObject[propValue];
-    }
-    return {};
+  <T, TV>({ propName, themeProperty }: IVariantFunctionProps<T>) =>
+  ({ theme, ...otherProps }: IVariantSecondFunctionProps<T>): TV => {
+    const propertyValue = otherProps[propName as keyof typeof otherProps];
+    const themeValues = theme?.[themeProperty] as Record<string, TV>;
+    return themeValues[propertyValue as string];
   };
 export default variant;
