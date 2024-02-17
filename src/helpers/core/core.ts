@@ -19,9 +19,9 @@ const core =
               propertyValue;
           }
 
-          if (typeof propertyValue === 'number') {
-            propertyValue = propertyValue + 'px';
-          }
+          // if (typeof propertyValue === 'number') {
+          //   propertyValue = propertyValue + 'px';
+          // }
 
           if (typeof propertyKey === 'string') {
             cssValues[propertyKey] = propertyValue;

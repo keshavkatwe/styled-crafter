@@ -1,8 +1,8 @@
-import colors from './colors';
+import { colors } from './index';
 
 describe('color helper test cases', () => {
   it('should check basic color function', () => {
-    expect(colors({ color: 'red', backgroundColor: 'green' })).toStrictEqual({
+    expect(colors({ $color: 'red', $backgroundColor: 'green' })).toStrictEqual({
       color: 'red',
       'background-color': 'green',
     });
@@ -10,8 +10,8 @@ describe('color helper test cases', () => {
   it('should check with theme object', () => {
     expect(
       colors({
-        color: 'black',
-        backgroundColor: 'white',
+        $color: 'black',
+        $backgroundColor: 'white',
         theme: {
           colors: {
             red: 'red',

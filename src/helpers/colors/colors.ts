@@ -3,10 +3,10 @@ import { core } from '../core';
 import { type IColorProps } from './colors.types';
 
 const coreColorInstance = core<Omit<IColorProps, 'theme'>>({
-  color: 'color',
-  clr: 'color',
-  bgColor: 'background-color',
-  backgroundColor: 'background-color',
+  $color: 'color',
+  $clr: 'color',
+  $bgColor: 'background-color',
+  $backgroundColor: 'background-color',
 });
 
 const colors = (props: IColorProps): Record<string, ICssValue> => {
