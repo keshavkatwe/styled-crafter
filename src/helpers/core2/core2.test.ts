@@ -8,9 +8,10 @@ describe('should test core 2', () => {
   });
 
   it('should check basic', () => {
-    expect(instance({ mt: '10px', mb: '50%' })).toEqual({
+    expect(instance({ mt: '10px', mb: '50%', ml: 10 })).toEqual({
       'margin-top': '10px',
       'margin-bottom': '50%',
+      'margin-left': '10px',
     });
   });
 });

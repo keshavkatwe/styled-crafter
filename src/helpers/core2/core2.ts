@@ -1,9 +1,20 @@
 import {
+  type IPropertyConfig,
   type IPropertyKey,
   type IPropertyMap,
   type IStylingProps,
 } from './core2.types';
 import type ICssValue from '../../types/ICssValue';
+
+const transformValue = (
+  propertyConfig: IPropertyConfig,
+  value: ICssValue,
+): string | number => {
+  if (typeof value === 'number' && !propertyConfig.isNumber) {
+    return value + 'px';
+  }
+  return value;
+};
 
 const core2 =
   <T>(propertyConfigs: IPropertyMap<T>) =>
@@ -15,8 +26,10 @@ const core2 =
       const propertyConfig = propertyConfigs[value];
 
       if (propertyValue !== undefined) {
+        const transformedValue = transformValue(propertyConfig, propertyValue);
+
         if (propertyConfig?.property !== undefined) {
-          cssValues[propertyConfig.property] = propertyValue;
+          cssValues[propertyConfig.property] = transformedValue;
         }
       }
     });
