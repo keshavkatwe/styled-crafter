@@ -9,9 +9,21 @@ import type ICssValue from '../../types/ICssValue';
 const transformValue = (
   propertyConfig: IPropertyConfig,
   value: ICssValue,
-): string | number => {
+): ICssValue => {
   if (typeof value === 'number' && !propertyConfig.isNumber) {
     return value + 'px';
+  }
+  return value;
+};
+
+const getValueFromTheme = <T>(
+  propertyConfig: IPropertyConfig,
+  stylingProps: IStylingProps<T>,
+  value: ICssValue,
+): ICssValue => {
+  const themeObj = stylingProps.theme;
+  if (themeObj && propertyConfig.scale) {
+    return themeObj[propertyConfig.scale]?.[value] ?? value;
   }
   return value;
 };
@@ -21,18 +33,30 @@ const core2 =
   (stylingProps: IStylingProps<T>) => {
     const propKeys = Object.keys(stylingProps) as Array<IPropertyKey<T>>;
     const cssValues: Record<string, ICssValue> = {};
-    propKeys.forEach((value) => {
-      const propertyValue = stylingProps[value];
-      const propertyConfig = propertyConfigs[value];
 
-      if (propertyValue !== undefined) {
-        const transformedValue = transformValue(propertyConfig, propertyValue);
+    propKeys
+      .filter((value) => value !== 'theme')
+      .forEach((value) => {
+        const propertyValue = stylingProps[value];
+        const propertyConfig = propertyConfigs[value];
 
-        if (propertyConfig?.property !== undefined) {
-          cssValues[propertyConfig.property] = transformedValue;
+        if (propertyValue !== undefined) {
+          const themePropertyValue = getValueFromTheme(
+            propertyConfig,
+            stylingProps,
+            propertyValue,
+          );
+
+          const transformedValue = transformValue(
+            propertyConfig,
+            themePropertyValue,
+          );
+
+          if (propertyConfig?.property !== undefined) {
+            cssValues[propertyConfig.property] = transformedValue;
+          }
         }
-      }
-    });
+      });
 
     return cssValues;
   };
