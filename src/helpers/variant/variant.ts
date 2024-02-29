@@ -3,6 +3,10 @@ import {
   type IVariantSecondFunctionProps,
 } from './variant.types';
 
+/**
+ * @deprecated since version 0.0.20
+ * We don't need this, This can be achieved by map.
+ */
 const variant =
   <T, TV>({ propName, themeProperty }: IVariantFunctionProps<T>) =>
   ({ theme, ...otherProps }: IVariantSecondFunctionProps<T>): TV => {
