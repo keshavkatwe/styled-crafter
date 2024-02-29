@@ -78,7 +78,7 @@ export const padding = core2<Omit<IPaddingProps, 'theme'>>({
   ...paddingConfigShort,
 });
 
-export const space = core2<Omit<ISpaceProps, 'theme'>>({
+const space = core2<Omit<ISpaceProps, 'theme'>>({
   ...marginConfigLong,
   ...marginConfigShort,
   ...paddingConfigLong,

@@ -1,4 +1,4 @@
-import core2 from './core2';
+import { core2 } from '../../index';
 
 describe('should test core 2', () => {
   const instance = core2({

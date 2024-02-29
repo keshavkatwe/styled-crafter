@@ -1,2 +1,2 @@
-export { default as space } from './space';
-export type { ISpaceProps } from './space.types';
+export { default as space, margin, padding } from './space';
+export type { ISpaceProps, IMarginProps, IPaddingProps } from './space.types';

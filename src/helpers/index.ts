@@ -1,4 +1,4 @@
-export * from './core';
+export * from './core2';
 export * from './space';
 export * from './variant';
 export * from './colors';
