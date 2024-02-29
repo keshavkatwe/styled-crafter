@@ -1,20 +1,14 @@
 import { type IFlexProps } from './flex.types';
-import { core } from '../core';
-import type ICssValue from '../../types/ICssValue';
+import { core2 } from '../core2';
 
-const coreFlexInstance = core<Omit<IFlexProps, 'theme'>>({
-  $flex: 'flex',
-  $flexDir: 'flex-direction',
-  $flexGrow: 'flex-grow',
-  $flexWrap: 'flex-wrap',
-  $gap: 'gap',
-  $alignItems: 'align-items',
-  $justifyContent: 'justify-content',
+const coreFlexInstance = core2<Omit<IFlexProps, 'theme'>>({
+  $flex: { property: 'flex', isNumber: true },
+  $flexDir: { property: 'flex-direction' },
+  $flexGrow: { property: 'flex-grow', isNumber: true },
+  $flexWrap: { property: 'flex-wrap' },
+  $gap: { property: 'gap', scale: 'spacing' },
+  $alignItems: { property: 'align-items' },
+  $justifyContent: { property: 'justify-content' },
 });
 
-const flex = (props: IFlexProps): Record<string, ICssValue> => {
-  return coreFlexInstance(props, {
-    themeAccessKey: 'spacing',
-  });
-};
-export default flex;
+export default coreFlexInstance;
