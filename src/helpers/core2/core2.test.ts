@@ -5,6 +5,7 @@ describe('should test core 2', () => {
     mt: { property: 'margin-top' },
     mb: { property: 'margin-bottom' },
     ml: { property: 'margin-left' },
+    mx: { properties: ['margin-left', 'margin-right'] },
   });
 
   it('should check basic', () => {
@@ -57,6 +58,13 @@ describe('should test core 2', () => {
       'margin-top': '10px',
       'margin-bottom': '10px',
       'margin-left': '14px',
+    });
+  });
+
+  it('should check if properties config', () => {
+    expect(instance({ mx: '50px' })).toStrictEqual({
+      'margin-left': '50px',
+      'margin-right': '50px',
     });
   });
 });

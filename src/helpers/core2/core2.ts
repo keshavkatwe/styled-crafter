@@ -40,7 +40,7 @@ const core2 =
         const propertyValue = stylingProps[value];
         const propertyConfig = propertyConfigs[value];
 
-        if (propertyValue !== undefined) {
+        if (propertyValue && propertyConfig) {
           const themePropertyValue = getValueFromTheme(
             propertyConfig,
             stylingProps,
@@ -54,6 +54,12 @@ const core2 =
 
           if (propertyConfig?.property !== undefined) {
             cssValues[propertyConfig.property] = transformedValue;
+          }
+
+          if (propertyConfig.properties) {
+            propertyConfig.properties.forEach(
+              (property) => (cssValues[property] = transformedValue),
+            );
           }
         }
       });
