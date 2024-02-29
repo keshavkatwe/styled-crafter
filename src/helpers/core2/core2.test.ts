@@ -45,15 +45,18 @@ describe('should test core 2', () => {
       instanceWithTheme({
         mt: 'sp1',
         mb: '10px',
+        ml: 'sp2',
         theme: {
           spacing: {
             sp1: '10px',
+            sp2: 14,
           },
         },
       }),
     ).toStrictEqual({
       'margin-top': '10px',
       'margin-bottom': '10px',
+      'margin-left': '14px',
     });
   });
 });
