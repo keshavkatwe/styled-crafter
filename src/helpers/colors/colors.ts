@@ -33,16 +33,4 @@ const colors = core2<Omit<IColorProps, 'theme'>>({
   ...backgroundColorsConfig,
 });
 
-// const coreColorInstance = core2<Omit<IColorProps, 'theme'>>({
-//   $color: 'color',
-//   $clr: 'color',
-//   $bgColor: 'background-color',
-//   $backgroundColor: 'background-color',
-// });
-//
-// const colors = (props: IColorProps): Record<string, ICssValue> => {
-//   return coreColorInstance(props, {
-//     themeAccessKey: 'colors',
-//   });
-// };
 export default colors;

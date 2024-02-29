@@ -1,43 +1,88 @@
-import { type ISpaceProps } from './space.types';
-import { core } from '../core';
-import type ICssValue from '../../types/ICssValue';
+import {
+  type IMarginLong,
+  type IMarginProps,
+  type IMarginShort,
+  type IPaddingLong,
+  type IPaddingProps,
+  type IPaddingShort,
+  type ISpaceProps,
+} from './space.types';
+import { core2 } from '../core2';
+import { type IPropertyConfig, type IPropertyKey } from '../core2/core2.types';
 
-const coreSpaceInstance = core<Omit<ISpaceProps, 'theme'>>({
-  // margin-properties
-  $margin: 'margin',
-  $marginTop: 'margin-top',
-  $marginRight: 'margin-right',
-  $marginBottom: 'margin-bottom',
-  $marginLeft: 'margin-left',
-  $marginX: ['margin-left', 'margin-right'],
-  $marginY: ['margin-top', 'margin-bottom'],
-  $m: 'margin',
-  $mt: 'margin-top',
-  $mr: 'margin-right',
-  $mb: 'margin-bottom',
-  $ml: 'margin-left',
-  $mx: ['margin-left', 'margin-right'],
-  $my: ['margin-top', 'margin-bottom'],
-
-  // padding-properties
-  $padding: 'padding',
-  $paddingTop: 'padding-top',
-  $paddingRight: 'padding-right',
-  $paddingBottom: 'padding-bottom',
-  $paddingLeft: 'padding-left',
-  $paddingX: ['padding-right', 'padding-left'],
-  $paddingY: ['padding-top', 'padding-bottom'],
-  $p: 'padding',
-  $pt: 'padding-top',
-  $pr: 'padding-right',
-  $pb: 'padding-bottom',
-  $pl: 'padding-left',
-  $px: ['padding-right', 'padding-left'],
-  $py: ['padding-top', 'padding-bottom'],
-});
-const space = (props: ISpaceProps): Record<string, ICssValue> => {
-  return coreSpaceInstance(props, {
-    themeAccessKey: 'spacing',
-  });
+const marginConfigLong: Record<
+  IPropertyKey<Omit<IMarginLong, 'theme'>>,
+  IPropertyConfig
+> = {
+  $margin: { property: 'margin', scale: 'spacing' },
+  $marginTop: { property: 'margin-top', scale: 'spacing' },
+  $marginRight: { property: 'margin-right', scale: 'spacing' },
+  $marginBottom: { property: 'margin-bottom', scale: 'spacing' },
+  $marginLeft: { property: 'margin-left', scale: 'spacing' },
+  $marginX: { properties: ['margin-left', 'margin-right'], scale: 'spacing' },
+  $marginY: { properties: ['margin-top', 'margin-bottom'], scale: 'spacing' },
 };
+
+const marginConfigShort: Record<
+  IPropertyKey<Omit<IMarginShort, 'theme'>>,
+  IPropertyConfig
+> = {
+  $m: marginConfigLong.$margin,
+  $mt: marginConfigLong.$marginTop,
+  $mr: marginConfigLong.$marginRight,
+  $mb: marginConfigLong.$marginBottom,
+  $ml: marginConfigLong.$marginLeft,
+  $mx: marginConfigLong.$marginX,
+  $my: marginConfigLong.$marginY,
+};
+
+const paddingConfigLong: Record<
+  IPropertyKey<Omit<IPaddingLong, 'theme'>>,
+  IPropertyConfig
+> = {
+  $padding: { property: 'padding', scale: 'spacing' },
+  $paddingTop: { property: 'padding-top', scale: 'spacing' },
+  $paddingRight: { property: 'padding-right', scale: 'spacing' },
+  $paddingBottom: { property: 'padding-bottom', scale: 'spacing' },
+  $paddingLeft: { property: 'padding-left', scale: 'spacing' },
+  $paddingX: {
+    properties: ['padding-right', 'padding-left'],
+    scale: 'spacing',
+  },
+  $paddingY: {
+    properties: ['padding-top', 'padding-bottom'],
+    scale: 'spacing',
+  },
+};
+
+const paddingConfigShort: Record<
+  IPropertyKey<Omit<IPaddingShort, 'theme'>>,
+  IPropertyConfig
+> = {
+  $p: paddingConfigLong.$padding,
+  $pt: paddingConfigLong.$paddingTop,
+  $pr: paddingConfigLong.$paddingRight,
+  $pb: paddingConfigLong.$paddingBottom,
+  $pl: paddingConfigLong.$paddingLeft,
+  $px: paddingConfigLong.$paddingX,
+  $py: paddingConfigLong.$paddingY,
+};
+
+export const margin = core2<Omit<IMarginProps, 'theme'>>({
+  ...marginConfigLong,
+  ...marginConfigShort,
+});
+
+export const padding = core2<Omit<IPaddingProps, 'theme'>>({
+  ...paddingConfigLong,
+  ...paddingConfigShort,
+});
+
+export const space = core2<Omit<ISpaceProps, 'theme'>>({
+  ...marginConfigLong,
+  ...marginConfigShort,
+  ...paddingConfigLong,
+  ...paddingConfigShort,
+});
+
 export default space;
