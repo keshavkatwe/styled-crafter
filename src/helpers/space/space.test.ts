@@ -1,4 +1,4 @@
-import { space } from './index';
+import { margin, padding, space } from './index';
 
 describe('should test space', () => {
   it('should check basic', () => {
@@ -38,5 +38,13 @@ describe('should test space', () => {
       'margin-left': '10px',
       'margin-right': '10px',
     });
+  });
+
+  it('should test margin', () => {
+    expect(margin({ $m: '10px' })).toStrictEqual({ margin: '10px' });
+  });
+
+  it('should test padding', () => {
+    expect(padding({ $p: '10px' })).toStrictEqual({ padding: '10px' });
   });
 });
