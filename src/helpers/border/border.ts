@@ -98,7 +98,7 @@ const borderWidthConfig = {
   ...borderWidthConfigShort,
 };
 
-const borderOtherConfig = {
+const borderOtherConfig: IPropertyConfigMap<IBorderOtherProps> = {
   $borderColor: { property: 'border-color', scale: 'colors' },
   $borderStyle: { property: 'border-style' },
 };
