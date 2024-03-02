@@ -3,6 +3,7 @@ declare module 'styled-crafter' {
     spacing: string;
     colors: string;
     sizes: string;
+    radii: string;
     buttons: Record<
       'primary' | 'secondary',
       {
