@@ -3,8 +3,8 @@ import type ITheme from '../../types/ITheme';
 
 type IRadii = DefaultCrafter['radii'];
 type IBorderThickness = DefaultCrafter['borderThickness'];
-type IBorderStyle = 'solid' | 'dotted' | 'dashed';
 type IColor = DefaultCrafter['colors'];
+type IBorderStyle = 'solid' | 'dotted' | 'dashed';
 
 export interface IBorderRadiusLong extends ITheme {
   $borderRadius?: IRadii;
