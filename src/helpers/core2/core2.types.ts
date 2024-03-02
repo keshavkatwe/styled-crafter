@@ -1,11 +1,12 @@
 import type ICssValue from '../../types/ICssValue';
 import type ITheme from '../../types/ITheme';
+import { type DefaultCrafter } from 'styled-crafter';
 
 export interface IPropertyConfig {
   property?: string;
   properties?: string[];
   isNumber?: boolean;
-  scale?: string;
+  scale?: keyof DefaultCrafter;
 }
 export type IPropertyKey<T> = keyof T;
 export type IPropertyConfigMap<T> = Record<

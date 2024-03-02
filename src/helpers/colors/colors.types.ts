@@ -1,14 +1,13 @@
 import { type DefaultCrafter } from 'styled-crafter';
-import type ITheme from '../../types/ITheme';
 
 type IColor = DefaultCrafter['colors'];
 
-export interface ITextColorProps extends ITheme {
+export interface ITextColorProps {
   $color?: IColor;
   $clr?: IColor;
 }
 
-export interface IBackgroundColorProps extends ITheme {
+export interface IBackgroundColorProps {
   $backgroundColor?: IColor;
   $bgColor?: IColor;
 }

@@ -3,7 +3,7 @@ import {
   borderOther,
   borderRadius,
   borderWidth,
-  IBorderOtherProps,
+  type IBorderOtherProps,
   type IBorderRadiusProps,
 } from './index';
 

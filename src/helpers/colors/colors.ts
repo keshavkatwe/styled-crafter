@@ -7,7 +7,7 @@ import { core2 } from '../core2';
 import { type IPropertyConfig, type IPropertyKey } from '../core2/core2.types';
 
 const textColorsConfig: Record<
-  IPropertyKey<Omit<ITextColorProps, 'theme'>>,
+  IPropertyKey<ITextColorProps>,
   IPropertyConfig
 > = {
   $color: { property: 'color', scale: 'colors' },
@@ -15,20 +15,19 @@ const textColorsConfig: Record<
 };
 
 const backgroundColorsConfig: Record<
-  IPropertyKey<Omit<IBackgroundColorProps, 'theme'>>,
+  IPropertyKey<IBackgroundColorProps>,
   IPropertyConfig
 > = {
   $backgroundColor: { property: 'background-color', scale: 'colors' },
   $bgColor: { property: 'background-color', scale: 'colors' },
 };
 
-export const textColors =
-  core2<Omit<ITextColorProps, 'theme'>>(textColorsConfig);
-export const backgroundColors = core2<Omit<IBackgroundColorProps, 'theme'>>(
+export const textColors = core2<ITextColorProps>(textColorsConfig);
+export const backgroundColors = core2<IBackgroundColorProps>(
   backgroundColorsConfig,
 );
 
-const colors = core2<Omit<IColorProps, 'theme'>>({
+const colors = core2<IColorProps>({
   ...textColorsConfig,
   ...backgroundColorsConfig,
 });
