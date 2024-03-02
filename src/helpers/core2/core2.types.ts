@@ -7,13 +7,11 @@ export interface IPropertyConfig {
   isNumber?: boolean;
   scale?: string;
 }
-
+export type IPropertyKey<T> = keyof T;
 export type IPropertyConfigMap<T> = Record<
   IPropertyKey<Omit<T, 'theme'>>,
   IPropertyConfig
 >;
-
-export type IPropertyKey<T> = keyof T;
 export type IPropertyMap<T> = Record<IPropertyKey<T>, IPropertyConfig>;
 export type IStylingProps<T> = Partial<Record<IPropertyKey<T>, ICssValue>> &
   ITheme;

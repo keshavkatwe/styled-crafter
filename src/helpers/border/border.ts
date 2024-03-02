@@ -1,8 +1,13 @@
 import { type IPropertyConfigMap } from '../core2/core2.types';
 import {
+  type IBorderOtherProps,
+  type IBorderProps,
   type IBorderRadiusLong,
   type IBorderRadiusProps,
   type IBorderRadiusShort,
+  type IBorderWidthLong,
+  type IBorderWidthProps,
+  type IBorderWidthShort,
 } from './border.types';
 import { core2 } from '../core2';
 
@@ -51,8 +56,63 @@ const borderRadiusConfigShort: IPropertyConfigMap<IBorderRadiusShort> = {
   $bbrr: borderRadiusConfigLong.$borderBottomRightRadius,
 };
 
-export const borderRadius = core2<Omit<IBorderRadiusProps, 'theme'>>({
+const borderWidthConfigLong: IPropertyConfigMap<IBorderWidthLong> = {
+  $borderWidth: { property: 'border-width', scale: 'borderThickness' },
+  $borderTopWidth: { property: 'border-top-width', scale: 'borderThickness' },
+  $borderBottomWidth: {
+    property: 'border-bottom-width',
+    scale: 'borderThickness',
+  },
+  $borderLeftWidth: { property: 'border-left-width', scale: 'borderThickness' },
+  $borderRightWidth: {
+    property: 'border-right-width',
+    scale: 'borderThickness',
+  },
+  $borderXWidth: {
+    properties: ['border-left-width', 'border-right-width'],
+    scale: 'borderThickness',
+  },
+  $borderYWidth: {
+    properties: ['border-top-width', 'border-bottom-width'],
+    scale: 'borderThickness',
+  },
+};
+
+const borderWidthConfigShort: IPropertyConfigMap<IBorderWidthShort> = {
+  $bw: borderWidthConfigLong.$borderWidth,
+  $btw: borderWidthConfigLong.$borderTopWidth,
+  $bbw: borderWidthConfigLong.$borderBottomWidth,
+  $blw: borderWidthConfigLong.$borderLeftWidth,
+  $brw: borderWidthConfigLong.$borderRightWidth,
+  $bxw: borderWidthConfigLong.$borderXWidth,
+  $byw: borderWidthConfigLong.$borderYWidth,
+};
+
+const borderRadiusConfig = {
   ...borderRadiusConfigLong,
   ...borderRadiusConfigShort,
+};
+
+const borderWidthConfig = {
+  ...borderWidthConfigLong,
+  ...borderWidthConfigShort,
+};
+
+const borderOtherConfig = {
+  $borderColor: { property: 'border-color' },
+  $borderStyle: { property: 'border-style' },
+};
+
+export const borderRadius =
+  core2<Omit<IBorderRadiusProps, 'theme'>>(borderRadiusConfig);
+export const borderWidth =
+  core2<Omit<IBorderWidthProps, 'theme'>>(borderWidthConfig);
+export const borderOther =
+  core2<Omit<IBorderOtherProps, 'theme'>>(borderOtherConfig);
+
+const border = core2<Omit<IBorderProps, 'theme'>>({
+  ...borderRadiusConfig,
+  ...borderWidthConfig,
+  ...borderOtherConfig,
 });
-export default borderRadius;
+export default border;

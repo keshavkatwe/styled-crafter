@@ -4,6 +4,7 @@ declare module 'styled-crafter' {
     colors: string;
     sizes: string;
     radii: string;
+    borderThickness: string;
     buttons: Record<
       'primary' | 'secondary',
       {
