@@ -1,7 +1,7 @@
 import { type IFlexProps } from './flex.types';
 import { core2 } from '../core2';
 
-const coreFlexInstance = core2<Omit<IFlexProps, 'theme'>>({
+const flex = core2<IFlexProps>({
   $flex: { property: 'flex', isNumber: true },
   $flexDir: { property: 'flex-direction' },
   $flexGrow: { property: 'flex-grow', isNumber: true },
@@ -11,4 +11,4 @@ const coreFlexInstance = core2<Omit<IFlexProps, 'theme'>>({
   $justifyContent: { property: 'justify-content' },
 });
 
-export default coreFlexInstance;
+export default flex;

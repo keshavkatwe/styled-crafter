@@ -8,12 +8,9 @@ import {
   type ISpaceProps,
 } from './space.types';
 import { core2 } from '../core2';
-import { type IPropertyConfig, type IPropertyKey } from '../core2/core2.types';
+import { type IPropertyConfigMap } from '../core2/core2.types';
 
-const marginConfigLong: Record<
-  IPropertyKey<Omit<IMarginLong, 'theme'>>,
-  IPropertyConfig
-> = {
+const marginConfigLong: IPropertyConfigMap<IMarginLong> = {
   $margin: { property: 'margin', scale: 'spacing' },
   $marginTop: { property: 'margin-top', scale: 'spacing' },
   $marginRight: { property: 'margin-right', scale: 'spacing' },
@@ -23,10 +20,7 @@ const marginConfigLong: Record<
   $marginY: { properties: ['margin-top', 'margin-bottom'], scale: 'spacing' },
 };
 
-const marginConfigShort: Record<
-  IPropertyKey<Omit<IMarginShort, 'theme'>>,
-  IPropertyConfig
-> = {
+const marginConfigShort: IPropertyConfigMap<IMarginShort> = {
   $m: marginConfigLong.$margin,
   $mt: marginConfigLong.$marginTop,
   $mr: marginConfigLong.$marginRight,
@@ -36,10 +30,7 @@ const marginConfigShort: Record<
   $my: marginConfigLong.$marginY,
 };
 
-const paddingConfigLong: Record<
-  IPropertyKey<Omit<IPaddingLong, 'theme'>>,
-  IPropertyConfig
-> = {
+const paddingConfigLong: IPropertyConfigMap<IPaddingLong> = {
   $padding: { property: 'padding', scale: 'spacing' },
   $paddingTop: { property: 'padding-top', scale: 'spacing' },
   $paddingRight: { property: 'padding-right', scale: 'spacing' },
@@ -55,10 +46,7 @@ const paddingConfigLong: Record<
   },
 };
 
-const paddingConfigShort: Record<
-  IPropertyKey<Omit<IPaddingShort, 'theme'>>,
-  IPropertyConfig
-> = {
+const paddingConfigShort: IPropertyConfigMap<IPaddingShort> = {
   $p: paddingConfigLong.$padding,
   $pt: paddingConfigLong.$paddingTop,
   $pr: paddingConfigLong.$paddingRight,
@@ -68,17 +56,17 @@ const paddingConfigShort: Record<
   $py: paddingConfigLong.$paddingY,
 };
 
-export const margin = core2<Omit<IMarginProps, 'theme'>>({
+export const margin = core2<IMarginProps>({
   ...marginConfigLong,
   ...marginConfigShort,
 });
 
-export const padding = core2<Omit<IPaddingProps, 'theme'>>({
+export const padding = core2<IPaddingProps>({
   ...paddingConfigLong,
   ...paddingConfigShort,
 });
 
-const space = core2<Omit<ISpaceProps, 'theme'>>({
+const space = core2<ISpaceProps>({
   ...marginConfigLong,
   ...marginConfigShort,
   ...paddingConfigLong,

@@ -1,4 +1,4 @@
-import { type ILayoutProps, layout } from './index';
+import { layout } from './index';
 
 describe('should test all cases of layout', () => {
   it('should test basic', () => {
@@ -6,7 +6,7 @@ describe('should test all cases of layout', () => {
       layout({
         $height: '10px',
         $overflow: 'hidden',
-      } satisfies ILayoutProps),
+      }),
     ).toStrictEqual({
       height: '10px',
       overflow: 'hidden',
@@ -24,7 +24,7 @@ describe('should test all cases of layout', () => {
             sz2: 20,
           },
         },
-      } satisfies ILayoutProps),
+      }),
     ).toStrictEqual({
       height: '20px',
       overflow: 'hidden',

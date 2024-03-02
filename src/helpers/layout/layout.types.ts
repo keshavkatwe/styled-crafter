@@ -1,9 +1,8 @@
 import type { DefaultCrafter } from 'styled-crafter';
-import type ITheme from '../../types/ITheme';
 
 type ISize = DefaultCrafter['sizes'];
 type IOverflow = 'visible' | 'hidden' | 'scroll';
-export interface ILayoutProps extends ITheme {
+export interface ILayoutProps {
   $height?: ISize;
   $width?: ISize;
   $minHeight?: ISize;
