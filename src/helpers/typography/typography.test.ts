@@ -1,4 +1,4 @@
-import { ITypographyProps, typography } from './index';
+import { type ITypographyProps, typography } from './index';
 
 describe('should check all test cases for typography', () => {
   it('should check basic', () => {
