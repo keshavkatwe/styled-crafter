@@ -1,11 +1,4 @@
-import {
-  border,
-  borderOther,
-  borderRadius,
-  borderWidth,
-  type IBorderOtherProps,
-  type IBorderRadiusProps,
-} from './index';
+import { border, borderOther, borderRadius, borderWidth } from './index';
 
 describe('should check border test cases', () => {
   it('should basic border', () => {
@@ -29,7 +22,7 @@ describe('should check border test cases', () => {
             br2: '30px',
           },
         },
-      } satisfies IBorderRadiusProps),
+      }),
     ).toStrictEqual({
       'border-radius': '10px',
       'border-top-left-radius': '30px',
@@ -50,7 +43,7 @@ describe('should check border test cases', () => {
     expect(
       borderOther({
         $borderStyle: 'solid',
-      } satisfies IBorderOtherProps),
+      }),
     ).toStrictEqual({
       'border-style': 'solid',
     });
