@@ -99,7 +99,7 @@ const borderWidthConfig = {
 };
 
 const borderOtherConfig = {
-  $borderColor: { property: 'border-color' },
+  $borderColor: { property: 'border-color', scale: 'colors' },
   $borderStyle: { property: 'border-style' },
 };
 
