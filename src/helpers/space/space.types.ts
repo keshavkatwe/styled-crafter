@@ -1,8 +1,8 @@
 import { type DefaultCrafter } from 'styled-crafter';
-import type ITheme from '../../types/ITheme';
 
 type ISpacing = DefaultCrafter['spacing'];
-export interface ISpaceProps extends ITheme {
+
+export interface IMarginLong {
   $margin?: ISpacing;
   $marginTop?: ISpacing;
   $marginRight?: ISpacing;
@@ -10,6 +10,9 @@ export interface ISpaceProps extends ITheme {
   $marginLeft?: ISpacing;
   $marginX?: ISpacing;
   $marginY?: ISpacing;
+}
+
+export interface IMarginShort {
   $m?: ISpacing;
   $mt?: ISpacing;
   $mr?: ISpacing;
@@ -17,7 +20,9 @@ export interface ISpaceProps extends ITheme {
   $ml?: ISpacing;
   $mx?: ISpacing;
   $my?: ISpacing;
+}
 
+export interface IPaddingLong {
   $padding?: ISpacing;
   $paddingTop?: ISpacing;
   $paddingRight?: ISpacing;
@@ -25,6 +30,9 @@ export interface ISpaceProps extends ITheme {
   $paddingLeft?: ISpacing;
   $paddingX?: ISpacing;
   $paddingY?: ISpacing;
+}
+
+export interface IPaddingShort {
   $p?: ISpacing;
   $pt?: ISpacing;
   $pr?: ISpacing;
@@ -33,3 +41,7 @@ export interface ISpaceProps extends ITheme {
   $px?: ISpacing;
   $py?: ISpacing;
 }
+
+export type IPaddingProps = IPaddingLong & IPaddingShort;
+export type IMarginProps = IMarginLong & IMarginShort;
+export type ISpaceProps = IMarginProps & IPaddingProps;

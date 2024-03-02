@@ -1,4 +1,4 @@
-import { colors } from './index';
+import { backgroundColors, colors, textColors } from './index';
 
 describe('color helper test cases', () => {
   it('should check basic color function', () => {
@@ -23,6 +23,16 @@ describe('color helper test cases', () => {
     ).toStrictEqual({
       color: '#000000',
       'background-color': '#FFFFFF',
+    });
+  });
+
+  it('should test textColor', () => {
+    expect(textColors({ $clr: 'red' })).toStrictEqual({ color: 'red' });
+  });
+
+  it('should test backgroundColor', () => {
+    expect(backgroundColors({ $bgColor: 'red' })).toStrictEqual({
+      'background-color': 'red',
     });
   });
 });

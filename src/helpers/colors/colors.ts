@@ -1,17 +1,30 @@
-import type ICssValue from '../../types/ICssValue';
-import { core } from '../core';
-import { type IColorProps } from './colors.types';
+import {
+  type IBackgroundColorProps,
+  type IColorProps,
+  type ITextColorProps,
+} from './colors.types';
+import { core2 } from '../core2';
+import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
-const coreColorInstance = core<Omit<IColorProps, 'theme'>>({
-  $color: 'color',
-  $clr: 'color',
-  $bgColor: 'background-color',
-  $backgroundColor: 'background-color',
+const textColorsConfig: IPropertyConfigMap<ITextColorProps> = {
+  $color: { property: 'color', scale: 'colors' },
+  $clr: { property: 'color', scale: 'colors' },
+};
+
+const backgroundColorsConfig: IPropertyConfigMap<IBackgroundColorProps> = {
+  $backgroundColor: { property: 'background-color', scale: 'colors' },
+  $bgColor: { property: 'background-color', scale: 'colors' },
+};
+
+export const textColors = core2<ITextColorProps>(textColorsConfig);
+export const backgroundColors = core2<IBackgroundColorProps>(
+  backgroundColorsConfig,
+);
+
+/** `colors` util is used to apply text color and background color to components */
+const colors = core2<IColorProps>({
+  ...textColorsConfig,
+  ...backgroundColorsConfig,
 });
 
-const colors = (props: IColorProps): Record<string, ICssValue> => {
-  return coreColorInstance(props, {
-    themeAccessKey: 'colors',
-  });
-};
 export default colors;
