@@ -12,5 +12,6 @@ const layout = core2<ILayoutProps>({
   $overflow: { property: 'overflow' },
   $overflowX: { property: 'overflow-x' },
   $overflowY: { property: 'overflow-Y' },
+  $display: { property: 'display' },
 });
 export default layout;

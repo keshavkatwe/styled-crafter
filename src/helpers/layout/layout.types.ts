@@ -2,6 +2,7 @@ import type { DefaultCrafter } from 'styled-crafter';
 
 type ISize = DefaultCrafter['sizes'];
 type IOverflow = 'visible' | 'hidden' | 'scroll';
+type IDisplay = 'flex' | 'none';
 export interface ILayoutProps {
   $height?: ISize;
   $width?: ISize;
@@ -13,4 +14,5 @@ export interface ILayoutProps {
   $overflow?: IOverflow;
   $overflowX?: IOverflow;
   $overflowY?: IOverflow;
+  $display?: IDisplay;
 }
