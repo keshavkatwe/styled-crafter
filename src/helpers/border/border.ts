@@ -103,14 +103,11 @@ const borderOtherConfig: IPropertyConfigMap<IBorderOtherProps> = {
   $borderStyle: { property: 'border-style' },
 };
 
-export const borderRadius =
-  core2<Omit<IBorderRadiusProps, 'theme'>>(borderRadiusConfig);
-export const borderWidth =
-  core2<Omit<IBorderWidthProps, 'theme'>>(borderWidthConfig);
-export const borderOther =
-  core2<Omit<IBorderOtherProps, 'theme'>>(borderOtherConfig);
+export const borderRadius = core2<IBorderRadiusProps>(borderRadiusConfig);
+export const borderWidth = core2<IBorderWidthProps>(borderWidthConfig);
+export const borderOther = core2<IBorderOtherProps>(borderOtherConfig);
 
-const border = core2<Omit<IBorderProps, 'theme'>>({
+const border = core2<IBorderProps>({
   ...borderRadiusConfig,
   ...borderWidthConfig,
   ...borderOtherConfig,

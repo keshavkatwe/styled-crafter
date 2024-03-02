@@ -1,12 +1,11 @@
 import { type DefaultCrafter } from 'styled-crafter';
-import type ITheme from '../../types/ITheme';
 
 type IRadii = DefaultCrafter['radii'];
 type IBorderThickness = DefaultCrafter['borderThickness'];
 type IColor = DefaultCrafter['colors'];
 type IBorderStyle = 'solid' | 'dotted' | 'dashed';
 
-export interface IBorderRadiusLong extends ITheme {
+export interface IBorderRadiusLong {
   $borderRadius?: IRadii;
   $borderTopRadius?: IRadii;
   $borderBottomRadius?: IRadii;
@@ -18,7 +17,7 @@ export interface IBorderRadiusLong extends ITheme {
   $borderBottomRightRadius?: IRadii;
 }
 
-export interface IBorderRadiusShort extends ITheme {
+export interface IBorderRadiusShort {
   $br?: IRadii;
   $btr?: IRadii;
   $bbr?: IRadii;
@@ -50,7 +49,7 @@ export interface IBorderWidthShort {
   $byw?: IBorderThickness;
 }
 
-export interface IBorderOtherProps extends ITheme {
+export interface IBorderOtherProps {
   $borderStyle?: IBorderStyle;
   $borderColor?: IColor;
 }
