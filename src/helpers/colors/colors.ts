@@ -4,20 +4,14 @@ import {
   type ITextColorProps,
 } from './colors.types';
 import { core2 } from '../core2';
-import { type IPropertyConfig, type IPropertyKey } from '../core2/core2.types';
+import { type IPropertyConfigMap } from '../core2/core2.types';
 
-const textColorsConfig: Record<
-  IPropertyKey<ITextColorProps>,
-  IPropertyConfig
-> = {
+const textColorsConfig: IPropertyConfigMap<ITextColorProps> = {
   $color: { property: 'color', scale: 'colors' },
   $clr: { property: 'color', scale: 'colors' },
 };
 
-const backgroundColorsConfig: Record<
-  IPropertyKey<IBackgroundColorProps>,
-  IPropertyConfig
-> = {
+const backgroundColorsConfig: IPropertyConfigMap<IBackgroundColorProps> = {
   $backgroundColor: { property: 'background-color', scale: 'colors' },
   $bgColor: { property: 'background-color', scale: 'colors' },
 };
