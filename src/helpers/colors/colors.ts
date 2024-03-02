@@ -21,6 +21,7 @@ export const backgroundColors = core2<IBackgroundColorProps>(
   backgroundColorsConfig,
 );
 
+/** `colors` util is used to apply text color and background color to components */
 const colors = core2<IColorProps>({
   ...textColorsConfig,
   ...backgroundColorsConfig,
