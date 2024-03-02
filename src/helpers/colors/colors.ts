@@ -4,7 +4,7 @@ import {
   type ITextColorProps,
 } from './colors.types';
 import { core2 } from '../core2';
-import { type IPropertyConfigMap } from '../core2/core2.types';
+import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const textColorsConfig: IPropertyConfigMap<ITextColorProps> = {
   $color: { property: 'color', scale: 'colors' },

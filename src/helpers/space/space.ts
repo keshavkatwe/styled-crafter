@@ -8,7 +8,7 @@ import {
   type ISpaceProps,
 } from './space.types';
 import { core2 } from '../core2';
-import { type IPropertyConfigMap } from '../core2/core2.types';
+import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const marginConfigLong: IPropertyConfigMap<IMarginLong> = {
   $margin: { property: 'margin', scale: 'spacing' },

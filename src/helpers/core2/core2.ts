@@ -1,10 +1,7 @@
-import {
-  type IPropertyConfig,
-  type IPropertyKey,
-  type IPropertyMap,
-  type IStylingProps,
-} from './core2.types';
+import { type IPropertyMap, type IStylingProps } from './core2.types';
 import type ICssValue from '../../types/ICssValue';
+import type IPropertyKey from '../../types/IPropertyKey';
+import type IPropertyConfig from '../../types/IPropertyConfig';
 
 const transformValue = (
   propertyConfig: IPropertyConfig,
@@ -58,7 +55,8 @@ const core2 =
 
           if (propertyConfig.properties) {
             propertyConfig.properties.forEach(
-              (property) => (cssValues[property] = transformedValue),
+              (property: string | number) =>
+                (cssValues[property] = transformedValue),
             );
           }
         }

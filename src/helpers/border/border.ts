@@ -1,4 +1,3 @@
-import { type IPropertyConfigMap } from '../core2/core2.types';
 import {
   type IBorderOtherProps,
   type IBorderProps,
@@ -10,6 +9,7 @@ import {
   type IBorderWidthShort,
 } from './border.types';
 import { core2 } from '../core2';
+import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const borderRadiusConfigLong: IPropertyConfigMap<IBorderRadiusLong> = {
   $borderRadius: { property: 'border-radius', scale: 'radii' },
