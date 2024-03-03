@@ -8,7 +8,7 @@ import {
 describe('color helper test cases', () => {
   it('should check basic color function', () => {
     expect(
-      colors({ $color: 'red', $backgroundColor: '' } satisfies IColorProps),
+      colors({ $color: 'red', $backgroundColor: 'green' } satisfies IColorProps),
     ).toStrictEqual({
       color: 'red',
       'background-color': 'green',
