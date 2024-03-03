@@ -1,7 +1,7 @@
-import { core2 } from '../core2';
+import { core } from '../core';
 import { type ILayoutProps } from './layout.types';
 
-const layout = core2<ILayoutProps>({
+const layout = core<ILayoutProps>({
   $height: { property: 'height', scale: 'sizes' },
   $minHeight: { property: 'min-height', scale: 'sizes' },
   $maxHeight: { property: 'max-height', scale: 'sizes' },

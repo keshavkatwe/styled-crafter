@@ -1,7 +1,7 @@
-import { core2 } from '../core2';
+import { core } from '../core';
 import { type ITypographyProps } from './typography.types';
 
-const Typography = core2<ITypographyProps>({
+const Typography = core<ITypographyProps>({
   $textAlign: { property: 'text-align' },
   $letterSpacing: { property: 'letter-spacing' },
 });

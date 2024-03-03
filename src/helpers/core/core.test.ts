@@ -1,7 +1,7 @@
-import { core2 } from '../../index';
+import { core } from '../../index';
 
-describe('should test core 2', () => {
-  const instance = core2({
+describe('should test core', () => {
+  const instance = core({
     mt: { property: 'margin-top' },
     mb: { property: 'margin-bottom' },
     ml: { property: 'margin-left' },
@@ -36,7 +36,7 @@ describe('should test core 2', () => {
   });
 
   it('should check if theme value working', () => {
-    const instanceWithTheme = core2({
+    const instanceWithTheme = core({
       mt: { property: 'margin-top', scale: 'spacing' },
       mb: { property: 'margin-bottom', scale: 'spacing' },
       ml: { property: 'margin-left', scale: 'spacing' },

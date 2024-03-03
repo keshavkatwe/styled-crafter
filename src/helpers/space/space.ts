@@ -7,7 +7,7 @@ import {
   type IPaddingShort,
   type ISpaceProps,
 } from './space.types';
-import { core2 } from '../core2';
+import { core } from '../core';
 import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const marginConfigLong: IPropertyConfigMap<IMarginLong> = {
@@ -56,17 +56,17 @@ const paddingConfigShort: IPropertyConfigMap<IPaddingShort> = {
   $py: paddingConfigLong.$paddingY,
 };
 
-export const margin = core2<IMarginProps>({
+export const margin = core<IMarginProps>({
   ...marginConfigLong,
   ...marginConfigShort,
 });
 
-export const padding = core2<IPaddingProps>({
+export const padding = core<IPaddingProps>({
   ...paddingConfigLong,
   ...paddingConfigShort,
 });
 
-const space = core2<ISpaceProps>({
+const space = core<ISpaceProps>({
   ...marginConfigLong,
   ...marginConfigShort,
   ...paddingConfigLong,

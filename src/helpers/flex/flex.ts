@@ -1,7 +1,7 @@
 import { type IFlexProps } from './flex.types';
-import { core2 } from '../core2';
+import { core } from '../core';
 
-const flex = core2<IFlexProps>({
+const flex = core<IFlexProps>({
   $flex: { property: 'flex', isNumber: true },
   $flexDir: { property: 'flex-direction' },
   $flexGrow: { property: 'flex-grow', isNumber: true },

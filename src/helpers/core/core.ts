@@ -1,4 +1,4 @@
-import { type IPropertyMap, type IStylingProps } from './core2.types';
+import { type IPropertyMap, type IStylingProps } from './core.types';
 import type ICssValue from '../../types/ICssValue';
 import type IPropertyKey from '../../types/IPropertyKey';
 import type IPropertyConfig from '../../types/IPropertyConfig';
@@ -25,7 +25,7 @@ const getValueFromTheme = <T>(
   return value;
 };
 
-const core2 =
+const core =
   <T>(propertyConfigs: IPropertyMap<T>) =>
   (stylingProps: IStylingProps<T>) => {
     const propKeys = Object.keys(stylingProps) as Array<IPropertyKey<T>>;
@@ -64,4 +64,4 @@ const core2 =
 
     return cssValues;
   };
-export default core2;
+export default core;

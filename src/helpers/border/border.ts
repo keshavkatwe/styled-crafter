@@ -8,7 +8,7 @@ import {
   type IBorderWidthProps,
   type IBorderWidthShort,
 } from './border.types';
-import { core2 } from '../core2';
+import { core } from '../core';
 import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const borderRadiusConfigLong: IPropertyConfigMap<IBorderRadiusLong> = {
@@ -103,11 +103,11 @@ const borderOtherConfig: IPropertyConfigMap<IBorderOtherProps> = {
   $borderStyle: { property: 'border-style' },
 };
 
-export const borderRadius = core2<IBorderRadiusProps>(borderRadiusConfig);
-export const borderWidth = core2<IBorderWidthProps>(borderWidthConfig);
-export const borderOther = core2<IBorderOtherProps>(borderOtherConfig);
+export const borderRadius = core<IBorderRadiusProps>(borderRadiusConfig);
+export const borderWidth = core<IBorderWidthProps>(borderWidthConfig);
+export const borderOther = core<IBorderOtherProps>(borderOtherConfig);
 
-const border = core2<IBorderProps>({
+const border = core<IBorderProps>({
   ...borderRadiusConfig,
   ...borderWidthConfig,
   ...borderOtherConfig,
