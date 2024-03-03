@@ -1,6 +1,5 @@
-import type { DefaultCrafter } from 'styled-crafter';
+import { type ISpacing } from '../../types/IScale';
 
-type ISpacing = DefaultCrafter['spacing'];
 export type IFlexDirection = 'row' | 'column';
 export type IFlexWrap = 'wrap' | 'nowrap';
 export type IAlignItems =

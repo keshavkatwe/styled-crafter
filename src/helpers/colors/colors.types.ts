@@ -1,6 +1,4 @@
-import { type DefaultCrafter } from 'styled-crafter';
-
-type IColor = DefaultCrafter['colors'];
+import { type IColor } from '../../types/IScale';
 
 export interface ITextColorProps {
   /** Used to apply text color */
