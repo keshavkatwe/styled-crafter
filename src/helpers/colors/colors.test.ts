@@ -1,8 +1,15 @@
-import { backgroundColors, colors, textColors } from './index';
+import {
+  backgroundColors,
+  colors,
+  type IColorProps,
+  textColors,
+} from './index';
 
 describe('color helper test cases', () => {
   it('should check basic color function', () => {
-    expect(colors({ $color: 'red', $backgroundColor: 'green' })).toStrictEqual({
+    expect(
+      colors({ $color: 'red', $backgroundColor: '' } satisfies IColorProps),
+    ).toStrictEqual({
       color: 'red',
       'background-color': 'green',
     });

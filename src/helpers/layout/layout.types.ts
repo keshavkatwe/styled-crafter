@@ -1,6 +1,5 @@
-import type { DefaultCrafter } from 'styled-crafter';
+import { type ISize } from '../../types/IScale';
 
-type ISize = DefaultCrafter['sizes'];
 type IOverflow = 'visible' | 'hidden' | 'scroll';
 type IDisplay = 'flex' | 'none';
 export interface ILayoutProps {
