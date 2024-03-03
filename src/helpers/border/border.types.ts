@@ -1,8 +1,9 @@
-import { type DefaultCrafter } from 'styled-crafter';
+import {
+  type IBorderThickness,
+  type IColor,
+  type IRadii,
+} from '../../types/IScale';
 
-type IRadii = DefaultCrafter['radii'];
-type IBorderThickness = DefaultCrafter['borderThickness'];
-type IColor = DefaultCrafter['colors'];
 type IBorderStyle = 'solid' | 'dotted' | 'dashed';
 
 export interface IBorderRadiusLong {

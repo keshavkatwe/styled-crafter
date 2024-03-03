@@ -1,16 +1,9 @@
 declare module 'styled-crafter' {
   export interface DefaultCrafter {
-    spacing: string;
-    colors: string;
-    sizes: string;
-    radii: string;
-    borderThickness: string;
-    buttons: Record<
-      'primary' | 'secondary',
-      {
-        'background-color': string;
-        color: string;
-      }
-    >;
+    spacing: Record<string, string | number>;
+    colors: Record<string, string | number>;
+    sizes: Record<string, string | number>;
+    radii: Record<string, string | number>;
+    borderThickness: Record<string, string | number>;
   }
 }

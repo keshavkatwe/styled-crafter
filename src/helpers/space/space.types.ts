@@ -1,6 +1,4 @@
-import { type DefaultCrafter } from 'styled-crafter';
-
-type ISpacing = DefaultCrafter['spacing'];
+import { type ISpacing } from '../../types/IScale';
 
 export interface IMarginLong {
   $margin?: ISpacing;
