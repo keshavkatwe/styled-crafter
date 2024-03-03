@@ -3,7 +3,7 @@ import {
   type IColorProps,
   type ITextColorProps,
 } from './colors.types';
-import { core2 } from '../core2';
+import { core } from '../core';
 import { type IPropertyConfigMap } from '../../types/IPropertyConfig';
 
 const textColorsConfig: IPropertyConfigMap<ITextColorProps> = {
@@ -16,13 +16,13 @@ const backgroundColorsConfig: IPropertyConfigMap<IBackgroundColorProps> = {
   $bgColor: { property: 'background-color', scale: 'colors' },
 };
 
-export const textColors = core2<ITextColorProps>(textColorsConfig);
-export const backgroundColors = core2<IBackgroundColorProps>(
+export const textColors = core<ITextColorProps>(textColorsConfig);
+export const backgroundColors = core<IBackgroundColorProps>(
   backgroundColorsConfig,
 );
 
 /** `colors` util is used to apply text color and background color to components */
-const colors = core2<IColorProps>({
+const colors = core<IColorProps>({
   ...textColorsConfig,
   ...backgroundColorsConfig,
 });

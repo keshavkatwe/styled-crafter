@@ -12,7 +12,7 @@
     "dev": "tsc -w",
     "build": "microbundle",
     "deploy": "yarn build && yarn publish --patch && git push && git push --tags",
-    "lint": "eslint .",
+    "lint": "eslint . && tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky install"
